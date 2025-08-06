@@ -1,0 +1,16 @@
+query RunInput {
+  cart {
+    deliveryGroups {
+      deliveryAddress {
+        zip
+        city
+        provinceCode
+        countryCode
+      }
+      deliveryOptions {
+        handle
+        title
+      }
+    }
+  }
+}

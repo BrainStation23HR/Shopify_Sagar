@@ -1,0 +1,20 @@
+{
+  "cart": {
+    "deliveryGroups": [
+      {
+        "deliveryAddress": {
+          "zip": "1212",
+          "countryCode": "BD",
+          "provinceCode": "DHK",
+          "city": "Dhaka"
+        },
+        "deliveryOptions": [
+          {
+            "handle": "standard-shipping",
+            "title": "Standard Shipping"
+          }
+        ]
+      }
+    ]
+  }
+}

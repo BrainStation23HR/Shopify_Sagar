@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="{{  'app.css' | asset_url  }}">
+<script>
+  var script = document.createElement('script');
+  script.src = 'https://aeroapps.io/cdn/personalizer-dev/assets/app-copy.js?v='+ Date.now();
+  script.defer = true;
+  document.head.appendChild(script);
+</script>
+
+{% schema %}
+{
+  "name": "Delivery Scheduler",
+  "target": "body",
+  "settings": []
+}
+{% endschema %}
