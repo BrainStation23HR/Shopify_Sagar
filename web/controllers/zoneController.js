@@ -19,7 +19,7 @@ export async function saveZone(req, res) {
         let zone;
         if (id) {
             zone = await DeliveryZone.findByIdAndUpdate(id, { name, address, shippingRate, blackout_dates, time_slots }, { new: true });
-            await createMultipleShippingCharges(shop, zone);
+            // await createMultipleShippingCharges(shop, zone);
         } else {
             zone = await DeliveryZone.create({ shop, name, address, shippingRate, blackout_dates, time_slots });
         }
