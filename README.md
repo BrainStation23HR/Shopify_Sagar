@@ -22,6 +22,17 @@ use this command to run the app
 
 1.Update the .env data.
 
+```
+MONGO_URI=mongodb://127.0.0.1:27017/dynamic-delivery
+SHOPIFY_API_KEY=2e2f7fda1adcf7bfeb6d28a8f1743e6e
+SHOPIFY_DELIVERY_SLOT_SELECTOR_ID=f71ef271-f602-4fe7-a179-4e00c90eca7b
+SHOPIFY_DELIVERY_SCHEDULER_ID=f71ef271-f602-4fe7-a179-4e00c90eca7b
+SHOPIFY_DYNAMIC_DELIVERY_SCHEDULER_ID=ad42a89b-7984-4114-9e5c-6c586380a737
+SHOPIFY_DELIVERY_CUSTOMIZATION_ID=d6b1044c-60b6-4ec0-b2b4-9b4d342015ed
+
+VERSION="2025-07"
+```
+
 2.Update the host URL in the app.js file on asset,URL which is generated in the toml file in dev.
 
 3.Connect or update the app.js accessible public route into the dynamic_delivery_scheduler.liquid file, which is in the Block folder.
