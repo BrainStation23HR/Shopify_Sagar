@@ -12,6 +12,8 @@ Runt this commands to the root and frontend and web to install all dependency.
 
 ```
 npm run dev
+
+npm run dev -- --reset
 ```
 
 use this command to run the app
@@ -82,6 +84,7 @@ run this to register the extension
 
 I raaly appreciate to get the oppurtunity ,I learn so many thing from the assesment test ,In my company now We use Laravel and react to create app and never worked like this app logic so I got some challanges to make app In Node express first time but I overcome and try this to make the app .but I can not complete it and here it the output
 
-##Contract
+## Contract
+
 Email:sagar@gmail.com
 Mobile:01601103076
