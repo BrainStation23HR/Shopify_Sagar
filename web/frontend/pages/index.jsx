@@ -2,7 +2,6 @@ import {
   Page,
 } from "@shopify/polaris";
 import { TitleBar, useAppBridge } from "@shopify/app-bridge-react";
-import { getSessionToken } from "@shopify/app-bridge-utils";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -20,9 +19,7 @@ export default function HomePage() {
   return (
     <Page narrowWidth>
       <TitleBar title={t("HomePage.title")} />
-      {shop ? (
-        <DeliverySettings shop={shop} />
-      ) : (
+      {shop ? <DeliverySettings shop={shop} /> : (
         <p>Loading shop info...</p>
       )}
     </Page>

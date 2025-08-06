@@ -3,7 +3,7 @@
 client_id = "2e2f7fda1adcf7bfeb6d28a8f1743e6e"
 name = "Dynamic Delivery Scheduler"
 handle = "dynamic-delivery-scheduler-1"
-application_url = "https://vat-rising-historic-pizza.trycloudflare.com"
+application_url = "https://told-apnic-composite-southeast.trycloudflare.com"
 embedded = true
 
 [build]
@@ -20,9 +20,9 @@ scopes = "read_orders, write_orders, read_products, write_products, read_shippin
 
 [auth]
 redirect_urls = [
-  "https://vat-rising-historic-pizza.trycloudflare.com/auth/callback",
-  "https://vat-rising-historic-pizza.trycloudflare.com/auth/shopify/callback",
-  "https://vat-rising-historic-pizza.trycloudflare.com/api/auth/callback"
+  "https://told-apnic-composite-southeast.trycloudflare.com/auth/callback",
+  "https://told-apnic-composite-southeast.trycloudflare.com/auth/shopify/callback",
+  "https://told-apnic-composite-southeast.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

@@ -7,6 +7,9 @@ import serveStatic from "serve-static";
 import shopify from "./shopify.js";
 import PrivacyWebhookHandlers from "./privacy.js";
 import deliveryRoutes from './routes/delivery.js';
+import zoneRoutes from './routes/zone.js';
+import storefrontZone from './routes/storefront/zone.js'
+import storefrontSlot from './routes/storefront/slot.js';
 import { connectDB } from "./db/connection.js";
 import cors from 'cors';
 
@@ -37,19 +40,22 @@ app.post(
   shopify.processWebhooks({ webhookHandlers: PrivacyWebhookHandlers })
 );
 
-// If you are adding routes outside of the /api path, remember to
-// also add a proxy rule for them in web/frontend/vite.config.js
 
-app.use("/api/*", shopify.validateAuthenticatedSession());
 
+app.use(cors());
 app.use(express.json());
+// storefront apis
 
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
-app.use('/api/delivery', deliveryRoutes);
+app.use('/api/storefront/zones', storefrontZone);
+app.use('/api/storefront/slots', storefrontSlot);
+
+// admin apis
+
+app.use("/api/admin/*", shopify.validateAuthenticatedSession());
+
+
+app.use('/api/admin/zones', zoneRoutes);
+app.use('/api/admin/delivery', deliveryRoutes);
 
 
 

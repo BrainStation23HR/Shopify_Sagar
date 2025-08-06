@@ -1,6 +1,9 @@
+// @ts-check
+
 /**
  * @typedef {import("../generated/api").RunInput} RunInput
  * @typedef {import("../generated/api").FunctionRunResult} FunctionRunResult
+ * @typedef {import("../generated/api").Operation} Operation
  */
 
 /**
@@ -15,38 +18,38 @@ const NO_CHANGES = {
  * @returns {FunctionRunResult}
  */
 export function run(input) {
-  const operations = [];
+  /**
+   * @type {{
+  *   stateProvinceCode: string
+  *   message: number
+  * }}
+  */
+  // const configuration = JSON.parse(
+  //   input?.deliveryCustomization?.metafield?.value ?? "{}"
+  // );
+  // if (!configuration.stateProvinceCode || !configuration.message) {
+  //   return NO_CHANGES;
+  // }
 
-  for (const group of input.cart.deliveryGroups) {
-    const { city, zip, countryCode } = group.deliveryAddress;
+  // let toRename = input.cart.deliveryGroups
+  //   .filter(group => group.deliveryAddress?.provinceCode &&
+  //     group.deliveryAddress.provinceCode == configuration.stateProvinceCode)
+  //   .flatMap(group => group.deliveryOptions)
+  //   .map(option => /** @type {Operation} */({
+  //     rename: {
+  //       deliveryOptionHandle: option.handle,
+  //       title: "customized delivery",
+  //     }
+  //   }));
 
-    let customPrice = null;
-
-    // ✅ Example pricing logic
-    if (city === "Dhaka") {
-      customPrice = 3000; // 30.00 BDT
-    } else if (city === "Chittagong") {
-      customPrice = 5000; // 50.00 BDT
-    } else if (city === "Sylhet") {
-      customPrice = 7000; // 70.00 BDT
-    } else {
-      customPrice = 10000; // 100.00 BDT
-    }
-
-    for (const option of group.deliveryOptions) {
-      operations.push({
-        update: {
-          deliveryOptionHandle: option.handle,
-          title: `Shipping to ${city}`,
-          price: {
-            amount: 5000,
-            currencyCode: "BDT",
-          },
-        },
-      });
-
-    }
-  }
-
-  return { operations };
-}
+  return {
+    operations: [
+      {
+        rename: {
+          deliveryOptionHandle: input.cart.deliveryGroups[0].deliveryOptions[0].handle,
+          title: "customized delivery",
+        }
+      }
+    ]
+  };
+};

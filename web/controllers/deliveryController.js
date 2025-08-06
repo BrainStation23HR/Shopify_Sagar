@@ -19,9 +19,11 @@ export const getAvailableSlots = async (req, res) => {
             const slots = [];
 
             for (const slot of settings.time_slots) {
-                const count = await DeliveryBooking.countDocuments({ shop, date: iso, time_slot: slot.time });
+                // Use startTime-endTime as the slot identifier
+                const slotId = `${slot.startTime}-${slot.endTime}`;
+                const count = await DeliveryBooking.countDocuments({ shop, date: iso, time_slot: slotId });
                 if (count < slot.capacity) {
-                    slots.push(slot.time);
+                    slots.push({ startTime: slot.startTime, endTime: slot.endTime, capacity: slot.capacity });
                 }
             }
 

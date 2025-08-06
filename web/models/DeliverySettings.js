@@ -5,7 +5,8 @@ const DeliverySettingsSchema = new mongoose.Schema({
     blackout_dates: [String],
     time_slots: [
         {
-            time: String,
+            startTime: String,
+            endTime: String,
             capacity: Number,
         },
     ],
