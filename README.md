@@ -18,9 +18,11 @@ use this command to run the app
 
 ## Update data
 
-1.update the .env data
-2.update host url in the app.js file which is generate in the toml file in dev
-3.connect or update the app.js acceessible public route into the dynamic_delivery_scheduler.liquid file which is in Block folder
+1.Update the .env data.
+
+2.Update the host URL in the app.js file on asset,URL which is generated in the toml file in dev.
+
+3.Connect or update the app.js accessible public route into the dynamic_delivery_scheduler.liquid file, which is in the Block folder.
 
 ## Deploy the app
 
@@ -34,10 +36,9 @@ now it should work
 
 ## Optional
 
-I created an extension called delivery-customization I thouth I can handle shipping charge using this but I got wrong when Read the documentation,I found it can not change the shipphing charge ammount directly it can just order rename and hide,then I start to work in different procces but I could not complete to read documentation off shopify and the implementation proccess.
+I created an extension called delivery-customization. I thought I could handle shipping charges using this, but I was wrong. When I read the documentation, I found it cannot change the shipping charge amount directly.it can only rename and hide and order the shipping methods. Then I started working on a different process, but I could not complete reading the Shopify documentation and the implementation process.
 
-To run this extension you need to go graphql zone from the console url after run the app
-and get the id of the extension and register the extension using this id
+To run this extension, you need to go to the GraphQL zone from the console URL after running the app, get the ID of the extension, and register the extension using this ID.
 
 ```
 query{
